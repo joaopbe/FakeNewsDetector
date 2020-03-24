@@ -1,9 +1,7 @@
-<img src="https://bit.ly/2VnXWr2" alt="Ironhack Logo" width="100"/>
 
-# Title of My Project
-*[Your Name]*
 
-*[Your Cohort, Campus & Date]*
+# Fake News - Cleaning Online Media with Machine Learning
+*João Pedro Eira*
 
 ## Content
 - [Project Description](#project-description)
@@ -19,28 +17,33 @@
 - [Links](#links)
 
 ## Project Description
-Write a short description of your project: 3-5 sentences about what your project is about, why you chose this topic (if relevant), and what you are trying to show.
+
+This project aims to develop a Machine Learning algorithm to detect fake news in the English language.
+Several classifiers are testes together with bag of words processing of the text.
 
 ## Hypotheses / Questions
-* What data/business/research/personal question you would like to answer?
-* What is the context for the question and the possible scientific or business application?
-* What are the hypotheses you would like to test in order to answer your question?  
-Frame your hypothesis with statistical/data languages (i.e. define Null and Alternative Hypothesis). You can use formulas if you want but that is not required.
+
+Given a news defined bu it´s title and text determine if the news is a real news article or fake news.
+
+Fake news is one of the great plagues of the modern fully connected age. They are now back on the spotlight in the context of the COVID-19 crisis, as rumours spread even faster than the virus. To be able to effectively identify and eliminate fake news is paramount to any democracy.
+
+To approach this issue using Machine Learning a Bag of Words approach is used, and the text is first vectorized. Then several classifiers are tested and tuned to find the optimal model.
 
 ## Dataset
-* Where did you get your data? If you downloaded a dataset (either public or private), describe where you downloaded it and include the command to load the dataset.
-* Did you build your own datset? If so, did you use an API or a web scraper? PRovide the relevant scripts in your repo.
-* For all types of datasets, provide a description of the size, complexity, and data types included in your dataset, as well as a schema of the tables if necessary.
-* If the question cannot be answered with the available data, why not? What data would you need to answer it better?
+
+The original data to train/test the models is obtained from two Kaggle datasets. You can find them [here](https://www.kaggle.com/snapcrack/all-the-news) and [here](https://www.kaggle.com/mrisdal/fake-news). Both datasets include the article text and title.
+
+Additionaly, a small more recent data set of COVID 19 news was used to test the model performance with news from a different context and timeline of the original data. This data is included in the file 'corona_fake.csv' included in this repository.
 
 ## Cleaning
-Describe your full process of data wrangling and cleaning. Document why you chose to fill missing values, extract outliers, or create the variables you did as well as your reasoning behind the process.
+The data sets required some cleaning for missing entries. The process used is described in detail in the notebooks. Also, since the size was very unbalanced (150K entries versus 12K), the "true news" data set was sampled so that a balanced training set was used for the model.
 
 ## Analysis
-* Overview the general steps you went through to analyze your data in order to test your hypothesis.
-* Document each step of your data exploration and analysis.
-* Include charts to demonstrate the effect of your work.
-* If you used Machine Learning in your final project, describe your feature selection process.
+
+The first step in the project is process the text - cleaning punctuation, tokenizing, stemming, lemmatization and stop word removing followed by vectorization and tf-idf transforming.
+
+After that, six classifiers are tested hypertuned and cross-validated - Naive-Bayes, Logistic Regression, SVM with Linear Kernel, Decision Tree, Random Forest and Gradient Boosting. They are evaluated using Accuracy, Precision, Recall and F1-score metrics.
+
 
 ## Model Training and Evaluation
 *Include this section only if you chose to include ML in your project.*
