@@ -1,19 +1,18 @@
 
+<img src="https://github.com/joaopbe/FakeNewsDetector/blob/master/Presentation/pp_title.png" alt="Fake News" width="100"/>
+
 
 # Fake News - Cleaning Online Media with Machine Learning
 *João Pedro Eira*
 
 ## Content
 - [Project Description](#project-description)
-- [Hypotheses / Questions](#hypotheses-questions)
+- [Questions](#questions)
 - [Dataset](#dataset)
 - [Cleaning](#cleaning)
 - [Analysis](#analysis)
-- [Model Training and Evaluation](#model-training-and-evaluation)
 - [Conclusion](#conclusion)
 - [Future Work](#future-work)
-- [Workflow](#workflow)
-- [Organization](#organization)
 - [Links](#links)
 
 ## Project Description
@@ -21,7 +20,7 @@
 This project aims to develop a Machine Learning algorithm to detect fake news in the English language.
 Several classifiers are testes together with bag of words processing of the text.
 
-## Hypotheses / Questions
+## Questions
 
 Given a news defined bu it´s title and text determine if the news is a real news article or fake news.
 
