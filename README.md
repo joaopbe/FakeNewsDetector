@@ -42,34 +42,36 @@ The data sets required some cleaning for missing entries. The process used is de
 
 The first step in the project is process the text - cleaning punctuation, tokenizing, stemming, lemmatization and stop word removing followed by vectorization and tf-idf transforming.
 
-After that, six classifiers are tested hypertuned and cross-validated - Naive-Bayes, Logistic Regression, SVM with Linear Kernel, Decision Tree, Random Forest and Gradient Boosting. They are evaluated using Accuracy, Precision, Recall and F1-score metrics.
+This was done with a combination of nltk and sklearn library implementations.
 
+After that, six classifiers are tested, hypertuned and cross-validated - Naive-Bayes, Logistic Regression, SVM with Linear Kernel, Decision Tree, Random Forest and Gradient Boosting. Then they are evaulted on the test set - using Accuracy, Precision, Recall and F1-score metrics.
 
-## Model Training and Evaluation
-*Include this section only if you chose to include ML in your project.*
-* Describe how you trained your model, the results you obtained, and how you evaluated those results.
+For each classifier 3 feature configurations were tested - only title of the article, only the text (full article) or both text and title used as features.
+
+All models were tested using sklearn implementations of the models.
+
+Results show that:
+
+  - Using the full text of the article leads to better (6-8% depending on the model) results than using only the title
+  - Using both text and title at the same time does not show sensible improvement, and, depending on the model, may even show worse results than using only the text
+  - The best model overall is Logistic Regression using the text as a feature and a regularization parameter C=10, which produces an accuracy of 93.11% and an F1-Score of 0.93.
+
+  - Tested on a different dataset (COVID-19 news) the model still shows an high accuracy - 85%.
 
 ## Conclusion
-* Summarize your results. What do they mean?
-* What can you say about your hypotheses?
-* Interpret your findings in terms of the questions you try to answer.
+
+- Results show a very high accuracy using a very simple model - Logistic Regression. The model is relatively computer-processing inexpensive.
+- The more rich text article produces significantly better results, meaning the model can infer more "meaning" from the full text than when using just the title.
+- The model reveals robustness to a different data set.
+
 
 ## Future Work
-Address any questions you were unable to answer, or any next steps or future extensions to your project.
-
-## Workflow
-Outline the workflow you used in your project. What were the steps?
-How did you test the accuracy of your analysis and/or machine learning algorithm?
-
-## Organization
-How did you organize your work? Did you use any tools like a trello or kanban board?
-
-What does your repository look like? Explain your folder and file structure.
+- Test the model with a bigger and more rich recent dataset, filled with different news cycles. Analyse results and retrain acoordingly.
+- Test new approaches - deep learning, LTSM,...
+- Extend to Fake "audio news" and "video" - Get text from audio and video and use the models to infer fake/true news.
+- Integrate with online platforms for automatic detection and elimination of fake contents.
 
 ## Links
-Include links to your repository, slides and trello/kanban board. Feel free to include any other links associated with your project.
 
-
-[Repository](https://github.com/)  
-[Slides](https://slides.com/)  
-[Trello](https://trello.com/en)  
+[Repository](https://github.com/joaopbe/FakeNewsDetector)  
+[Slides](https://github.com/joaopbe/FakeNewsDetector/blob/master/Presentation/Fake_News.pptx)  
