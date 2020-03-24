@@ -1,5 +1,5 @@
 
-<img src="https://github.com/joaopbe/FakeNewsDetector/blob/master/Presentation/pp_title.png" alt="Fake News" width="500"/>
+<img src="https://github.com/joaopbe/FakeNewsDetector/blob/master/Presentation/pp_title.png" alt="Fake News" width="500 aligment="center" "/>
 
 
 # Fake News - Cleaning Online Media with Machine Learning
